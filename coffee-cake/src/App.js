@@ -6,6 +6,29 @@ import NotFound from './components/NotFound';
 import './App.css';
 
 class App extends Component {
+
+
+  componentDidMount() {
+    this.getFirebase();
+  }
+
+  getFirebase() {
+    axios({
+      url: '/todos.json',
+      baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
+      method: "GET"
+    }).then((response) => {
+      this.setState({ todos: response.data });
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+
+
+
+
+
   render() {
     return (
       <div className="App">
