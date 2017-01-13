@@ -12,6 +12,9 @@
 
 ![Alt text] (https://github.com/2high/project2/blob/master/wireframe/Screen%20Shot%202017-01-13%20at%202.01.35%20PM.png?raw=true)
 
-![Alt text] ()
+![Alt text] (https://github.com/2high/project2/blob/master/wireframe/Screen%20Shot%202017-01-13%20at%202.11.49%20PM.png?raw=true)
 
-![Alt text] ()
+![Alt text] (https://github.com/2high/project2/blob/master/wireframe/Screen%20Shot%202017-01-13%20at%202.13.37%20PM.png?raw=true)
+
+![Alt text] (https://github.com/2high/project2/blob/master/wireframe/Screen%20Shot%202017-01-13%20at%202.14.29%20PM.png?raw=true)
+
