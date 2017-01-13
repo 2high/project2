@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Share from './components/Share';
 import Places from './components/Places';
+import Location from './components/Location';
 import NotFound from './components/NotFound';
 import './App.css';
 
@@ -35,11 +36,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="Container">
         <NavBar />
         <Match exactly pattern="/" component={Home} />
         <Match exactly pattern="/share" component={Share} />
-        <Match exactly pattern="/places" component={Places} />
+        <Match exactly pattern="/places" component={Places} />      
         <Miss component={NotFound} />
       </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Location from './Location';
 
 const Home = () => (
   <div className="container">
@@ -7,6 +8,10 @@ const Home = () => (
         This is our app's home page. This is what the user sees when they visit the root URL.
       </div>
     </div>
+<Location />
   </div>
+
+
+
 );
 export default Home;
