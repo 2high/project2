@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const NavBar = () => (
@@ -25,7 +25,7 @@ const NavBar = () => (
       </li>
       <li className="dan">
         <Link
-          to="/people"
+          to="/Places"
           activeOnlyWhenExact
           activeClassName="active"
         >

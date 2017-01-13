@@ -4,6 +4,7 @@ import axios from 'axios';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Share from './components/Share';
+import Places from './components/Places';
 import NotFound from './components/NotFound';
 import './App.css';
 
@@ -38,6 +39,7 @@ class App extends Component {
         <NavBar />
         <Match exactly pattern="/" component={Home} />
         <Match exactly pattern="/share" component={Share} />
+        <Match exactly pattern="/places" component={Places} />
         <Miss component={NotFound} />
       </div>
 
