@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Match, Miss } from 'react-router';
+import axios from 'axios';
 import logo from './logo.svg';
+import NotFound from './components/NotFound';
 import './App.css';
 
 class App extends Component {
