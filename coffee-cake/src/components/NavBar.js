@@ -5,7 +5,7 @@ const NavBar = () => (
   <div className="App-header">
     <h2>Coffee & Cakes</h2>
     <ul>
-      <li>
+      <li className="dan">
         <Link
           to="/"
           activeOnlyWhenExact
@@ -14,14 +14,16 @@ const NavBar = () => (
           Home
         </Link>
       </li>
-      <li>
+      <li className="dan">
         <Link
-          to="/people"
+          to="/Share"
           activeOnlyWhenExact
           activeClassName="active"
         >
           Share
         </Link>
+      </li>
+      <li className="dan">
         <Link
           to="/people"
           activeOnlyWhenExact

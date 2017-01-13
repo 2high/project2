@@ -3,6 +3,7 @@ import { BrowserRouter, Match, Miss } from 'react-router';
 import axios from 'axios';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
+import Share from './components/Share';
 import NotFound from './components/NotFound';
 import './App.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
         <div>
         <NavBar />
         <Match exactly pattern="/" component={Home} />
+        <Match exactly pattern="/share" component={Share} />
         <Miss component={NotFound} />
       </div>
 
