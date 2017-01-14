@@ -10,6 +10,13 @@ import NotFound from './components/NotFound';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+  super();
+
+  this.state = {
+  
+  };
+}
 
 
   componentDidMount() {
@@ -18,11 +25,11 @@ class App extends Component {
 
   getFirebase() {
     axios({
-      url: '/todos.json',
+      url: '/location.json',
       baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
       method: "GET"
     }).then((response) => {
-      this.setState({ todos: response.data });
+      this.setState({ location: response.data });
     }).catch((error) => {
       console.log(error);
     });
@@ -40,7 +47,7 @@ class App extends Component {
         <NavBar />
         <Match exactly pattern="/" component={Home} />
         <Match exactly pattern="/share" component={Share} />
-        <Match exactly pattern="/places" component={Places} />      
+        <Match exactly pattern="/places" component={Places} />
         <Miss component={NotFound} />
       </div>
 
