@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 const Share = () => (
   <div className="container">
-    <div className="row">
-      <div className="col-md-12">
+    <div className="row text-center">
+      <div className="col-md-12 space_share">
         <div className="">Select a location</div>
         <select>
           <option value="manhattan">Manhattan</option>
@@ -13,11 +13,11 @@ const Share = () => (
           <option value="queens">Queens</option>
         </select>
       </div>
-      <div className="col-md-12">
+      <div className="col-md-12 space_share">
           <div className="aa">Name of the place</div>
           <input type="text" name="FirstName" value="Mickey" />
       </div>
-      <div className="col-md-12">
+      <div className="col-md-12 space_share">
         <div className="aa">Coffee ranking (between 1 and 5):</div>
         <select>
           <option>1</option>
@@ -27,7 +27,7 @@ const Share = () => (
           <option >5</option>
         </select>
       </div>
-      <div className="col-md-12">
+      <div className="col-md-12 space_share">
         <div className="aa">Cake ranking (between 1 and 5):</div>
         <select>
           <option>1</option>
@@ -37,7 +37,7 @@ const Share = () => (
           <option >5</option>
         </select>
       </div>
-      <div className="col-md-12">
+      <div className="col-md-12 space_share">
         <button>Share</button>
       </div>
     </div>
