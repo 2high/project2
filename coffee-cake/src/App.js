@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Match, Miss } from 'react-router';
-import axios from 'axios';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Share from './components/Share';
@@ -14,26 +13,12 @@ class App extends Component {
   super();
 
   this.state = {
-  
+    location: [],
+
   };
+
 }
 
-
-  componentDidMount() {
-    this.getFirebase();
-  }
-
-  getFirebase() {
-    axios({
-      url: '/location.json',
-      baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
-      method: "GET"
-    }).then((response) => {
-      this.setState({ location: response.data });
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
 
 
 
@@ -45,7 +30,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="Container">
         <NavBar />
-        <Match exactly pattern="/" component={Home} />
+        <Match exactly pattern="/" component={Home } />
         <Match exactly pattern="/share" component={Share} />
         <Match exactly pattern="/places" component={Places} />
         <Miss component={NotFound} />
