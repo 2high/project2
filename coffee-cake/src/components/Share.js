@@ -16,7 +16,7 @@ class Share extends React.Component{
           comment: this.comment.value
         }
       }).then(() => {
-        this.props.getPlaces();
+        console.log("=====>", this.location.value);
         this.location.value = "";
         this.name.value = "";
         this.coffee.value = "";
@@ -38,6 +38,7 @@ class Share extends React.Component{
                 <div className="row">
                   <div className="blow">
                   <div className="col-md-12">
+
                   <div className="form-group">
                     <label className="sharez">Location</label>
                     <input

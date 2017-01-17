@@ -24,6 +24,9 @@ class Places extends React.Component{
       });
    }
 
+
+
+
    renderLocations = () => {
      if (Object.keys(this.state.locations) != 0) {
        let test = Object.keys(this.state.locations).map((crazykey, i) => {
@@ -32,10 +35,15 @@ class Places extends React.Component{
           return (
             <div key={i} className="col-md-3 wrapz">
               <div className="places_in"><span className="places_info">Location:</span>{this.state.locations[crazykey].location}</div>
+              <button >delete</button>
               <div className="places_in"><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
+              <button>delete</button>
               <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
+              <button>delete</button>
               <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
+              <button >delete</button>
               <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
+              <button >delete</button>
             </div>
           )
 
@@ -49,6 +57,20 @@ class Places extends React.Component{
       </div>
     );
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    render(){
        return(
