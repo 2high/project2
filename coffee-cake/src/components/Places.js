@@ -9,6 +9,8 @@ class Places extends React.Component{
     this.state = {
       locations: {},
     }
+    this.deleteLocation = this.deleteLocation.bind(this);
+    this.editLocation = this.editLocation.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +27,36 @@ class Places extends React.Component{
    }
 
 
+//https://coffee-cake-194f3.firebaseio.com/location/area/-Kai2572T4E9BbSuk-8J.json
+   deleteLocation(event) {
+    let deleteKey = event.target.name;
+    console.log(deleteKey);
+    // https://coffee-cake-194f3.firebaseio.com//location/area/${deleteKey}.json
+    axios.delete(`https://coffee-cake-194f3.firebaseio.com/location/area/${deleteKey}.json`)
+    .then((res) =>{
+      this.setState({
+        locations: res.data
+      });
+    })
+    // axios({
+    //   url: `/location/area/${deleteKey}.json`,
+    //   baseURL: 'https://coffee-cake-194f3.firebaseio.com/`',
+    //   method: 'DELETE'
+    // }).then((res) => {
+    //   let locations = this.state.locations;
+    //   delete locations[deleteKey];
+    //   this.setState({ locations: locations })
+    // }).catch( function() { console.log('error')})
+  }
+  editLocation(event) {
+   let editKey = event.target.name;
+   console.log(editKey)
+   axios.patch(`https://coffee-cake-194f3.firebaseio.com/location/area/${editKey}.json`).then((res) => {
+     console.log(res)
+   })
+ }
+
+
 
 
    renderLocations = () => {
@@ -35,15 +67,12 @@ class Places extends React.Component{
           return (
             <div key={i} className="col-md-3 wrapz">
               <div className="places_in"><span className="places_info">Location:</span>{this.state.locations[crazykey].location}</div>
-              <button >delete</button>
               <div className="places_in"><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
-              <button>delete</button>
               <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
-              <button>delete</button>
               <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
-              <button >delete</button>
               <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
-              <button >delete</button>
+              <button name={crazykey} onClick={ this.deleteLocation } >delete</button>
+              <button name={crazykey} onClick={ this.editLocation } >Edit</button>
             </div>
           )
 
