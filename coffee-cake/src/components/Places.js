@@ -30,12 +30,12 @@ class Places extends React.Component{
         //  console.log("crazykey", crazykey)
         //  console.log("i", i);
           return (
-            <div key={i} className="col-md-3">
-              <div><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
-              <div><span className="places_info">Location:</span>{this.state.locations[crazykey].location}</div>
-              <div><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
-              <div><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
-              <div><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
+            <div key={i} className="col-md-3 wrapz">
+              <div className="places_in"><span className="places_info">Location:</span>{this.state.locations[crazykey].location}</div>
+              <div className="places_in"><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
+              <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
+              <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
+              <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
             </div>
           )
 

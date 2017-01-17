@@ -37,7 +37,6 @@ class Share extends React.Component{
               <div className="container">
                 <div className="row">
                   <div className="blow">
-
                   <div className="col-md-12">
                   <div className="form-group">
                     <label className="sharez">Location</label>
@@ -91,9 +90,8 @@ class Share extends React.Component{
                       className="btn btn-success">
                       Submit
                     </button>
-
                   </div>
-                  
+
                   </div>
                 </div>
               </div>

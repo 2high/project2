@@ -46,8 +46,18 @@
 
 .places_info{
   font-weight: 700;
-  font-size: 1.4em;
   padding-right: 10px;
+}
+.places_in{
+  font-weight: 300;
+font-size: 1.6em;
+padding: 10px;
+
+}
+.wrapz{
+  border: solid 1px #000;
+  margin: 40px;
+
 }
 
 
