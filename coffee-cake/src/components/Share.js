@@ -3,108 +3,76 @@ import { Link } from 'react-router';
 import axios from 'axios';
 
 
-
-class Share extends React.Component {
-  constructor() {
-  super();
-
-  this.state = {
-    location: [],
-
-  };
-
-}
-componentDidMount() {
-  this.getFirebase();
-}
-
-getFirebase() {
-  axios({
-    url: '/location.json',
-    baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
-    method: "GET"
-  }).then((response) => {
-    this.setState({ location: response.data });
-  }).catch((error) => {
-    console.log(error);
-  });
-}
-
-createTodo = (todoText) => {
-  let newTodo = { Location: todoText, createdAt: new Date,  };
-
-  axios({
-    url: '/location.json',
-    baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
-    method: "POST",
-    data: newTodo
-  }).then((response) => {
-    let todos = this.state.location;
-    let newTodoId = response.data.name;
-    todos[newTodoId] = newTodo;
-    this.setState({ location: todos });
-  }).catch((error) => {
-    console.log(error);
-  });
-}
-
-  handleNewTodoInput = (event) => {
-    if (event.charCode === 13) {
-      this.createTodo(event.target.value);
-      event.target.value = "";
-    }
-  }
-
-  renderNewTodoBox = () => {
-    return (
-      <div className="new-todo-box pb-2">
-        <input className="w-100" placeholder="What do you have to do?" onKeyPress={ this.handleNewTodoInput } />
-        <div className="">Select a location</div>
-      <select>
-        <option value="manhattan">Manhattan</option>
-        <option value="brooklyn">Brooklyn</option>
-        <option value="bronx">Bronx</option>
-        <option value="queens">Queens</option>
-      </select>
-      </div>
-    );
-  }
-
-  renderTodoList = () => {
-    let todoElements = [];
-
-    for(let todoId in this.state.location) {
-      let todo = this.state.location[todoId]
-
-      todoElements.push(
-        <div className="col-md-6" key={todoId}>
-          <div className="mt-2">
-            <h4>{todo.title}</h4>
-            <div>{(todo.createdAt).calendar()}</div>
-          </div>
-        </div>
-      );
+class Share extends React.Component{
+  createLocation() {
+      axios({
+        method: 'POST',
+        url: `https://coffee-cake-194f3.firebaseio.com/location/area.json`,
+        data: {
+          location: this.location.value,
+          name: this.name.value,
+          coffee: this.coffee.value,
+          cake: this.cake.value,
+          comment: this.comment.value
+        }
+      }).then(() => {
+        this.props.getPlaces();
+        this.location.value = "";
+        this.name.value = "";
+        this.coffee.value = "";
+        this.cake.value = "";
+        this.comment.value = "";
+      })
     }
 
-    return (
-      <div className="col-md-12">
-        {todoElements}
-      </div>
-    );
-  }
+    keyPress(e) {
+      if (e.charCode === 13) {
+        this.createLocation();
+      }
+    }
 
-  render (){
-    return (
-      <div className="container text-center">
-        <div className="col-md-12">
-          {this.renderNewTodoBox()}
-          {this.renderTodoList()}
-          {this.renderTodoList()}
+    render() {
+      return (
+        <div>
+          <div className="container">
+          <input
+            type="text"
+            ref={(input) => this.location = input}
+            placeholder="Location"
+            />
+          <input
+            type="text"
+            ref={(input) => this.name = input}
+            onKeyPress={(e) => this.keyPress(e)}
+            placeholder="name" />
+          <input
+            type="text"
+            ref={(input) => this.coffee = input}
+            onKeyPress={(e) => this.keyPress(e)}
+            placeholder="coffee ranking" />
+          <input
+            type="text"
+            ref={(input) => this.cake = input}
+            onKeyPress={(e) => this.keyPress(e)}
+            placeholder="cake ranking" />
+          <input
+            type="text"
+            ref={(input) => this.comment = input}
+            onKeyPress={(e) => this.keyPress(e)}
+            placeholder="Comment " />
+          <button
+            id="button"
+            type="submit"
+            onClick={() => this.createLocation()}
+            className="xxx">
+            Submit
+          </button>
         </div>
-    </div>
-    )
-  }
+        </div>
+      )
+    }
 
 
 }
+
 export default Share;

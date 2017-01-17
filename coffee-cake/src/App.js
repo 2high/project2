@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Match, Miss } from 'react-router';
+import axios from 'axios';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Share from './components/Share';
@@ -10,17 +11,27 @@ import './App.css';
 
 class App extends Component {
   constructor() {
-  super();
+    super();
+    this.state = {
 
-  this.state = {
-    location: [],
+    }
 
-  };
+  }
+
+componentDidMount() {
+  this.getPlaces();
 
 }
 
-
-
+getPlaces = () => {
+   axios.get(`https://coffee-cake-194f3.firebaseio.com/location/area.json`)
+   .then((res) => {
+     console.log(res);
+     this.setState({
+       location: res.data
+     })
+   })
+ }
 
 
 

@@ -30,9 +30,14 @@
   margin: 20px 0;
 }
 
+.xxx{
+  font-weight: 700;
+  font-size: 1.4em;
+}
 
-
-
+.ffff{
+  margin: 20px 0;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
