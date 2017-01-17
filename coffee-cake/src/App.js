@@ -15,26 +15,7 @@ class App extends Component {
     this.state = {
 
     }
-
   }
-
-componentDidMount() {
-  this.getPlaces();
-
-}
-
-getPlaces = () => {
-   axios.get(`https://coffee-cake-194f3.firebaseio.com/location/area.json`)
-   .then((res) => {
-     console.log(res);
-     this.setState({
-       location: res.data
-     })
-   })
- }
-
-
-
 
   render() {
     return (

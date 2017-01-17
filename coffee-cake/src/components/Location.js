@@ -5,16 +5,7 @@ const Location = () => (
   <div className="container">
     <div className="row">
       <div className="col-md-2">
-        Location
-      </div>
-      <div className="col-md-2">
-        Location
-      </div>
-      <div className="col-md-2">
-        Location
-      </div>
-      <div className="col-md-2">
-        Location
+        ajksojkdaopkdsoa
       </div>
     </div>
   </div>

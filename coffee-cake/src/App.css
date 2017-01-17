@@ -42,6 +42,13 @@
   width: 50%;
   margin: 50px auto;
 }
+/*Places component*/
+
+.places_info{
+  font-weight: 700;
+  font-size: 1.4em;
+  padding-right: 10px;
+}
 
 
 @keyframes App-logo-spin {
