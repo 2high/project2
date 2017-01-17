@@ -33,12 +33,13 @@ class Share extends React.Component{
 
     render() {
       return (
-<div>
+<div className="bgbg">
   <div className="container">
     <div className="row">
-      <div className="col-md-8 col-md-offset-2">
-      <div className="form-group sharez">
-        <label>Location</label>
+      <div className="blow">
+      <div className="col-md-12">
+      <div className="form-group">
+        <label className="sharez">Location</label>
         <input
           className="form-control"
           type="text"
@@ -47,7 +48,7 @@ class Share extends React.Component{
           />
       </div>
       <div className="form-group">
-        <label>Name of the venue</label>
+        <label className="sharez">Name of the venue</label>
         <input
           className="form-control"
           type="text"
@@ -56,7 +57,7 @@ class Share extends React.Component{
           placeholder="name" />
       </div>
       <div className="form-group">
-        <label>Coffee score</label>
+        <label className="sharez">Coffee score</label>
         <input
           className="form-control"
           type="text"
@@ -65,7 +66,7 @@ class Share extends React.Component{
           placeholder="coffee ranking" />
       </div>
       <div className="form-group">
-        <label>Cake score</label>
+        <label className="sharez">Cake score</label>
         <input
           className="form-control"
           type="text"
@@ -74,7 +75,7 @@ class Share extends React.Component{
           placeholder="cake ranking" />
       </div>
       <div className="form-group">
-        <label>Cake score</label>
+        <label className="sharez">Comment</label>
         <input
           className="form-control"
           type="text"
@@ -86,9 +87,10 @@ class Share extends React.Component{
           id="button"
           type="submit"
           onClick={() => this.createLocation()}
-          className="xxx">
+          className="btn btn-success">
           Submit
         </button>
+      </div>
       </div>
     </div>
   </div>

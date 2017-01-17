@@ -27,7 +27,20 @@
 
 /*Share component*/
 .sharez{
-  margin: 50px 0;
+  font-size: 1.5em;
+}
+.bgbg{
+  background-image: url('../src/coffeebg.jpg');
+  background-size: 20%;
+  height: 670px;
+}
+.blow{
+  background-color: #fff;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: 20px;
+  width: 50%;
+  margin: 50px auto;
 }
 
 
