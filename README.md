@@ -2,7 +2,7 @@
 
 ###Introduction
 
-Coffee & cakes is a small website build it with React.js where the user can Create, Read, Update and Delete the information about coffee venues.
+Coffee & cakes is a small website build  with React.js where the user can Create, Read, Update and Delete the information about coffee venues.
 
 ###Code Example
 
