@@ -29,8 +29,6 @@ class Places extends React.Component{
       });
    }
 
-
-//https://coffee-cake-194f3.firebaseio.com/location/area/-Kai2572T4E9BbSuk-8J.json
    deleteLocation(event) {
     let deleteKey = event.target.name;
     console.log(deleteKey);
@@ -51,13 +49,7 @@ class Places extends React.Component{
     //   this.setState({ locations: locations })
     // }).catch( function() { console.log('error')})
   }
- //  editLocation(event) {
- //   let editKey = event.target.name;
- //   console.log(editKey)
- //   axios.patch(`https://coffee-cake-194f3.firebaseio.com/location/area/${editKey}.json`).then((res) => {
- //     console.log(res)
- //   })
- // }
+
 
 editLocation() {
   this.state.edit? this.setState({edit: false}) : this.setState({edit: true})
@@ -164,7 +156,6 @@ editLocation() {
             </div>
           </div>
           )
-
        });
        console.log(test);
        return test;
