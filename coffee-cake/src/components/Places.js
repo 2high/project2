@@ -61,9 +61,11 @@ class Places extends React.Component{
 
 editLocation() {
   this.state.edit? this.setState({edit: false}) : this.setState({edit: true})
+
 }
  saveEdit(event) {
       let edit = event.target.name;
+
       let locations = this.state.locations
        let newLocation = locations[edit].location;
        let newName = locations[edit].name;
@@ -118,7 +120,14 @@ editLocation() {
                   <p>{this.state.locations[crazykey].location}</p>
                 }
                 </div>
-              <div className="places_in"><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
+              <div className="places_in">
+                <span className="places_info">Name:</span>
+                {this.state.edit?
+                  <input type="text" name={crazykey} id="name" value={this.state.locations[crazykey].name} onChange={this.handleChange}></input>
+                  :
+                <p>{this.state.locations[crazykey].name}</p>
+              }
+              </div>
               <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
               <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
               <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
