@@ -8,6 +8,7 @@ Coffee & cakes is a small website build it with React.js where the user can Crea
 
 My axios post method where the user can insert the LOCATION, NAME, COFFEE SCORE, CAKE SCORE and COMMENT.
 Then clear the input for new info.
+
 ```Javascript
   createLocation() {
       console.log(this.refs)
@@ -31,6 +32,7 @@ Then clear the input for new info.
       })
     }
     ```
+    
 
 ###Motivation
 
