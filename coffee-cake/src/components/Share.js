@@ -33,7 +33,7 @@ class Share extends React.Component{
 
     render() {
       return (
-            <div className="bgbg">
+            <div className="bgb">
               <div className="container">
                 <div className="row">
                   <div className="blow">

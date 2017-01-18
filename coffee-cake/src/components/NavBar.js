@@ -8,7 +8,7 @@ const NavBar = () => (
       <div className="navbar-header">
         <a className="navbar-brand aaa" href="#">Coffee & Cakes</a>
       </div>
-      <ul className="nav navbar-nav">
+      <ul className="nav navbar-nav pull-right">
         <li className="dan">
           <Link
             to="/"

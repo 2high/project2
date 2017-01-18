@@ -111,7 +111,9 @@ editLocation() {
         //  console.log("crazykey", crazykey)
         //  console.log("i", i);
           return (
-            <div key={i} className="col-md-3 wrapz">
+            <div className="bgb">
+              <div className="container">
+            <div key={i} className="col-md-7 wrapz">
               <div className="places_in">
                 <span className="places_info">Location:</span>
                 {this.state.edit?
@@ -155,10 +157,12 @@ editLocation() {
                 <p>{this.state.locations[crazykey].comment}</p>
               }
               </div>
-              <button name={crazykey} onClick={ this.deleteLocation } >delete</button>
-              <button name={crazykey} onClick={ this.editLocation } >Edit</button>
-              {this.state.edit? <button name={crazykey} onClick={ this.saveEdit } >Save</button> : <div></div>}
+              <button className="btn btn-danger shz" name={crazykey} onClick={ this.deleteLocation } >delete</button>
+              <button className="btn btn-success shz"  name={crazykey} onClick={ this.editLocation } >Edit</button>
+              {this.state.edit? <button className="btn btn-primary shz"  name={crazykey} onClick={ this.saveEdit } >Save</button> : <div></div>}
             </div>
+            </div>
+          </div>
           )
 
        });

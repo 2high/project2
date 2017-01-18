@@ -27,7 +27,7 @@
 
 /*NAVBAR */
 .bgb{
-  background-image: url('../src/coffee1.jpg');
+  background-image: url('../src/back.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 742px;
@@ -43,7 +43,50 @@
   width: 100%;
 
 }
-
+/*HOME COMPONENT*/
+.aprs{
+  font-size: 8em;
+  font-weight: 700;
+  color: #f9dc47;
+  text-shadow: 7px 0px 3px #000;
+  margin-top: 40px;
+}
+.aprsa{
+  font-size: 2.5em;
+  font-weight: 100;
+  margin-top: -20px;
+  background-color: #f9dc47;
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  color: #4a4949;
+}
+.aprsb{
+  font-size: 2.0em;
+  font-weight: 100;
+  padding: 10px;
+}
+.commen{
+  width: 100%;
+  background-color: #000;
+  margin-top: 248px;
+  color: #4a4949;
+  height: 60px;
+}
+.appz{
+  font-size: 2em;
+  background-color: #696562;
+  width: 30%;
+  padding: 20px 10px;
+  margin: 40px auto;
+  border-radius: 10px;
+  color: #fff !important;
+  text-decoration: none;
+  border-bottom: 7px solid #292725;
+}
+.appz:hover{
+  background-color: #292725;
+}
 /*Share component*/
 .sharez{
   font-size: 1.5em;
@@ -51,7 +94,7 @@
 .bgbg{
   background-image: url('../src/coffeebg.jpg');
   background-size: 20%;
-  height: 670px;
+  height: 690px;
 }
 .blow{
   background-color: #fff;
@@ -76,9 +119,12 @@ padding: 10px;
 .wrapz{
   border: solid 1px #000;
   margin: 40px;
+  background-color: #fff;
 
 }
-
+.shz{
+  padding-bottom: 20px;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
