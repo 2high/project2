@@ -25,6 +25,25 @@
   padding: 15px 20px;
 }
 
+/*NAVBAR */
+.bgb{
+  background-image: url('../src/coffee1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 742px;
+}
+.aaa{
+  font-weight: 700;
+  color: #000 !important;
+  font-size: 3em !important;
+  margin-top: 15px !important;
+
+}
+.navbr{
+  width: 100%;
+
+}
+
 /*Share component*/
 .sharez{
   font-size: 1.5em;
