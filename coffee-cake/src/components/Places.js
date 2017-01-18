@@ -128,9 +128,33 @@ editLocation() {
                 <p>{this.state.locations[crazykey].name}</p>
               }
               </div>
-              <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
-              <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
-              <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
+              <div className="places_in">
+                <span className="places_info">Coffee score:</span>
+                {this.state.edit?
+                  <input type="text" name={crazykey} id="coffee" value={this.state.locations[crazykey].coffee}
+                  onChange={this.handleChange}></input>
+                  :
+                <p>{this.state.locations[crazykey].coffee}</p>
+              }
+              </div>
+              <div className="places_in">
+                <span className="places_info">Cake score:</span>
+                {this.state.edit?
+                <input type="text" name={crazykey} id="cake" value={this.state.locations[crazykey].cake}
+                onChange={this.handleChange}></input>
+                :
+                <p>{this.state.locations[crazykey].cake}</p>
+                }
+              </div>
+              <div className="places_in">
+                <span className="places_info">Comment:</span>
+                {this.state.edit?
+                <input type="text" name={crazykey} id="comment" value={this.state.locations[crazykey].comment}
+                onChange={this.handleChange}></input>
+                :
+                <p>{this.state.locations[crazykey].comment}</p>
+              }
+              </div>
               <button name={crazykey} onClick={ this.deleteLocation } >delete</button>
               <button name={crazykey} onClick={ this.editLocation } >Edit</button>
               {this.state.edit? <button name={crazykey} onClick={ this.saveEdit } >Save</button> : <div></div>}
