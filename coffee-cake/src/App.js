@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Match, Miss } from 'react-router';
-import axios from 'axios';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Share from './components/Share';
 import Places from './components/Places';
-import Location from './components/Location';
 import NotFound from './components/NotFound';
 import './App.css';
 

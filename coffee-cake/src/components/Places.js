@@ -8,9 +8,12 @@ class Places extends React.Component{
     super();
     this.state = {
       locations: {},
+      edit: false,
     }
     this.deleteLocation = this.deleteLocation.bind(this);
     this.editLocation = this.editLocation.bind(this);
+    this.saveEdit = this.saveEdit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +38,7 @@ class Places extends React.Component{
     axios.delete(`https://coffee-cake-194f3.firebaseio.com/location/area/${deleteKey}.json`)
     .then((res) =>{
       this.setState({
-        locations: res.data
+        locations: res.data,
       });
     })
     // axios({
@@ -48,16 +51,57 @@ class Places extends React.Component{
     //   this.setState({ locations: locations })
     // }).catch( function() { console.log('error')})
   }
-  editLocation(event) {
-   let editKey = event.target.name;
-   console.log(editKey)
-   axios.patch(`https://coffee-cake-194f3.firebaseio.com/location/area/${editKey}.json`).then((res) => {
-     console.log(res)
-   })
- }
+ //  editLocation(event) {
+ //   let editKey = event.target.name;
+ //   console.log(editKey)
+ //   axios.patch(`https://coffee-cake-194f3.firebaseio.com/location/area/${editKey}.json`).then((res) => {
+ //     console.log(res)
+ //   })
+ // }
+
+editLocation() {
+  this.state.edit? this.setState({edit: false}) : this.setState({edit: true})
+}
+ saveEdit(event) {
+      let edit = event.target.name;
+      let locations = this.state.locations
+       let newLocation = locations[edit].location;
+       let newName = locations[edit].name;
+       let newCoffee = locations[edit].coffee;
+       let newCake = locations[edit].cake;
+       let newComment = locations[edit].comment;
+     axios({
+       method: 'PATCH',
+         url: `/location/area/${edit}.json`,
+         baseURL: 'https://coffee-cake-194f3.firebaseio.com/',
+       data: {
+         location: newLocation,
+         name: newName,
+         coffee: newCoffee,
+         cake: newCake,
+         comment: newComment
+       }
+     }).then((response) => {
+      //  console.log("=====>", this.location.value);
+        console.log(response)
+      //  this.location.value = "";
+      //  this.name.value = "";
+      //  this.coffee.value = "";
+      //  this.cake.value = "";
+      //  this.comment.value = "";
+     })
+   }
 
 
-
+   handleChange(event) {
+     let id = event.target.name;
+     let prop = event.target.id;
+     let locations = this.state.locations;
+     locations[id][prop] = event.target.value;
+     debugger;
+     this.setState({locations})
+     console.log(this.state)
+   }
 
    renderLocations = () => {
      if (Object.keys(this.state.locations) != 0) {
@@ -66,13 +110,21 @@ class Places extends React.Component{
         //  console.log("i", i);
           return (
             <div key={i} className="col-md-3 wrapz">
-              <div className="places_in"><span className="places_info">Location:</span>{this.state.locations[crazykey].location}</div>
+              <div className="places_in">
+                <span className="places_info">Location:</span>
+                {this.state.edit?
+                  <input type="text" name={crazykey} id="location" value={this.state.locations[crazykey].location} onChange={this.handleChange}></input>
+                  :
+                  <p>{this.state.locations[crazykey].location}</p>
+                }
+                </div>
               <div className="places_in"><span className="places_info">Name:</span>{this.state.locations[crazykey].name}</div>
               <div className="places_in"><span className="places_info">Coffee score:</span>{this.state.locations[crazykey].coffee}</div>
               <div className="places_in"><span className="places_info">Cake score:</span>{this.state.locations[crazykey].cake}</div>
               <div className="places_in"><span className="places_info">Comment:</span>{this.state.locations[crazykey].comment}</div>
               <button name={crazykey} onClick={ this.deleteLocation } >delete</button>
               <button name={crazykey} onClick={ this.editLocation } >Edit</button>
+              {this.state.edit? <button name={crazykey} onClick={ this.saveEdit } >Save</button> : <div></div>}
             </div>
           )
 

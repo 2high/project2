@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
+
 import axios from 'axios';
 
 
 class Share extends React.Component{
   createLocation() {
+      console.log(this.refs)
       axios({
         method: 'POST',
         url: `https://coffee-cake-194f3.firebaseio.com/location/area.json`,

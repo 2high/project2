@@ -1,5 +1,4 @@
 import React from 'react';
-import Location from './Location';
 
 const Home = () => (
   <div className="home">
